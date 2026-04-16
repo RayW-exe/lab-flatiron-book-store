@@ -52,20 +52,18 @@ const bookList = document.getElementById("book-list")
 bookStore.books.forEach(element => {
    const bookContainer = document.createElement("li")
    const bookTitle = document.createElement("h3")
-   const bookAuthor = document.createComment("p")
+   const bookAuthor = document.createElement("p")
    const bookImage = document.createElement("img")
-   bookTitle.textContent = books.title
-   bookAuthor = books.author
-   bookImage.src = books.imageUrl   
+   bookTitle.textContent = element.title
+   bookAuthor.textContent = element.author
+   bookImage.src = element.imageUrl   
+
+   bookContainer.append(bookTitle)
+   bookContainer.append(bookAuthor)
+   bookContainer.append(bookImage)
+
+   bookList.append(bookContainer)
 });
-
-
-
-bookContainer.append(bookTitle)
-bookContainer.append(bookAuthor)
-bookContainer.append(bookImage)
-
-bookList.append(bookContainer)
 
 const deleteEl = document.getElementById("delete-this")
 
