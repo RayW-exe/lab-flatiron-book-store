@@ -44,4 +44,34 @@ const bookStore = {
 }
 
 // Write your code here!
+const bookStoreTitle = document.querySelector("#header")
+bookStoreTitle.textContent = bookStore.name;
+
+const bookList = document.getElementById("book-list")
+
+bookStore.books.forEach(element => {
+   const bookContainer = document.createElement("li")
+   const bookTitle = document.createElement("h3")
+   const bookAuthor = document.createComment("p")
+   const bookImage = document.createElement("img")
+   bookTitle.textContent = books.title
+   bookAuthor = books.author
+   bookImage.src = books.imageUrl   
+});
+
+
+
+bookContainer.append(bookTitle)
+bookContainer.append(bookAuthor)
+bookContainer.append(bookImage)
+
+bookList.append(bookContainer)
+
+const deleteEl = document.getElementById("delete-this")
+
+if(deleteEl){
+  deleteEl.remove()
+}
+
+
 
